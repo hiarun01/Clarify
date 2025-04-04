@@ -9,6 +9,8 @@ const Home = () => {
 
   const uploadImageHandler = (file) => {
     setUpload(URL.createObjectURL(file));
+    setLoading(true);
+    // Api
   };
   return (
     <div className=" gap-4 w-full m-auto flex flex-col items-center justify-center bg-gray-50 py-5 px-4 sm:px-6 lg:px-8 lg:py-5">

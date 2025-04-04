@@ -1,7 +1,9 @@
-import React from "react";
-
 const Loading = () => {
-  return <div>Loading</div>;
+  return (
+    <div className="flex justify-center items-center h-full w-full">
+      <span>Loading...</span>
+    </div>
+  );
 };
 
 export default Loading;
