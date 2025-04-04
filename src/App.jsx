@@ -4,7 +4,7 @@ import {Image} from "lucide-react";
 
 function App() {
   return (
-    <div>
+    <div className="h-screen">
       {/* Header */}
       <header className="bg-red-600 text-center text-white py-3 text-lg font-bold flex justify-center items-center gap-2">
         <div>
@@ -16,7 +16,9 @@ function App() {
       </header>
       {/* Home */}
       <Home />
-      <footer>build bg : hiarun01</footer>
+      <footer className="bg-red-600 text-center text-white py-3 text-lg font-bold">
+        build by : hiarun01
+      </footer>
     </div>
   );
 }
