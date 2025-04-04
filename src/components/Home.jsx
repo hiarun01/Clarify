@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import UploadImage from "./UploadImage";
 import ImagePreview from "./ImagePreview";
 
 const Home = () => {
+  const [upload, setUpload] = useState(null);
+  const [enhance, setEnhance] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const uploadImageHandler = (file) => {
+    setUpload(URL.createObjectURL(file));
+  };
   return (
     <div className=" gap-4 w-full m-auto flex flex-col items-center justify-center bg-gray-50 py-5 px-4 sm:px-6 lg:px-8 lg:py-5">
       {/* Banner  */}
@@ -15,8 +22,8 @@ const Home = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center w-full max-w-2xl gap-4 sm:px-6 lg:px-8 lg:py-5 py-5">
-        <UploadImage />
-        <ImagePreview />
+        <UploadImage uploadImageHandler={uploadImageHandler} />
+        <ImagePreview upload={upload} loading={loading} enhance={enhance} />
       </div>
     </div>
   );
