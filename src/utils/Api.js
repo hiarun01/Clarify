@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// a8c078d1-0dd8-47c3-acd1-b214ffdf39ff
+
 export const getEnhanceImage = async (file) => {
   try {
     // upload image code
@@ -7,8 +9,10 @@ export const getEnhanceImage = async (file) => {
     console.log("Task ID:", taskId);
 
     // fetch Enhance image from api
-    const enhanceImage = await fetchEnhanceImage(taskId);
-    console.log("Enhance Image:", enhanceImage);
+
+    const enhanceImage = pollForEnchnaceImage(taskId);
+    console.log("Enhance Image", enhanceImage);
+    return enhanceImage;
   } catch (error) {
     console.error("Error fetching enhanced image:", error.message);
   }
@@ -20,27 +24,54 @@ export const uploadImage = async (file) => {
 
   formData.append("image_file", file);
 
-  try {
-    const {data} = await axios.post(
-      `${import.meta.env.VITE_BASE_URL}/api/tasks/visual/scale`,
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          "X-API-KEY": import.meta.env.VITE_API_KEY,
-        },
-      }
-    );
-    console.log("Image uploaded successfully:", data);
-
-    if (data && data.task_id) {
-      return data.task_id; // Return the task ID for further processing
+  const {data} = await axios.post(
+    `${import.meta.env.VITE_BASE_URL}/api/tasks/visual/scale`,
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "X-API-KEY": import.meta.env.VITE_API_KEY,
+      },
     }
-  } catch (error) {
-    console.error("Error uploading image:", error.message);
-  }
+  );
+
+  return data.data.task_id;
 };
 
 // Fetch Enhance image from api
 
-export const fetchEnhanceImage = async () => {};
+export const fetchEnhanceImage = async (taskId) => {
+  const {data} = await axios.get(
+    `${import.meta.env.VITE_BASE_URL}/api/tasks/visual/scale/${taskId}`,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "X-API-KEY": import.meta.env.VITE_API_KEY,
+      },
+    }
+  );
+
+  if (data?.data) {
+    console.log("failed to fetch enhance image");
+  }
+  return data.data;
+};
+
+// pollForenchanceimage
+
+const pollForEnchnaceImage = async (taskId, retrires = 0) => {
+  const result = await fetchEnhanceImage(taskId);
+
+  if (result.state === 4) {
+    console.log("Proccessing");
+
+    if (retrires >= 10) {
+      console.log("Reached limit, Please try again later..");
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    return pollForEnchnaceImage(taskId, retrires + 1);
+  }
+  console.log("Enhance image URL :");
+  return result;
+};
