@@ -20,17 +20,25 @@ export const uploadImage = async (file) => {
 
   formData.append("image_file", file);
 
-  const {data} = await axios.post(
-    `${import.meta.env.VITE_BASE_URL}/api/tasks/visual/scale`,
-    formData,
-    {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        "X-API-KEY": import.meta.env.VITE_API_KEY,
-      },
+  try {
+    const {data} = await axios.post(
+      `${import.meta.env.VITE_BASE_URL}/api/tasks/visual/scale`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "X-API-KEY": import.meta.env.VITE_API_KEY,
+        },
+      }
+    );
+    console.log("Image uploaded successfully:", data);
+
+    if (data && data.task_id) {
+      return data.task_id; // Return the task ID for further processing
     }
-  );
-  console.log("Image uploaded successfully:", data);
+  } catch (error) {
+    console.error("Error uploading image:", error.message);
+  }
 };
 
 // Fetch Enhance image from api
