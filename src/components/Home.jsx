@@ -1,16 +1,25 @@
 import React, {useState} from "react";
 import UploadImage from "./UploadImage";
 import ImagePreview from "./ImagePreview";
+import {getEnhanceImage} from "../utils/Api";
 
 const Home = () => {
   const [upload, setUpload] = useState(null);
   const [enhance, setEnhance] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const uploadImageHandler = (file) => {
+  const uploadImageHandler = async (file) => {
     setUpload(URL.createObjectURL(file));
     setLoading(true);
     // Api
+    try {
+      const enhanceImageUrl = await getEnhanceImage(file);
+
+      setEnhance(enhanceImageUrl);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className=" gap-4 w-full m-auto flex flex-col items-center justify-center bg-gray-50 py-5 px-4 sm:px-6 lg:px-8 lg:py-5">
