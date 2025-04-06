@@ -11,13 +11,13 @@ function App() {
           <Image />
         </div>
         <div>
-          <span className="text-lg">AI Image Enhancer</span>
+          <span className="text-lg font-semibold">AI Image Enhancer</span>
         </div>
       </header>
       {/* Home */}
       <Home />
-      <footer className="bg-red-600 text-center text-white py-3 text-lg font-bold shadow-md">
-        build by : hiarun01
+      <footer className="bg-red-600 text-center text-white py-3 text-sm font-bold shadow-md">
+        @hiarun01
       </footer>
     </div>
   );

@@ -9,7 +9,7 @@ const UploadImage = ({uploadImageHandler}) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-fit gap-4 py-4 w-full max-w-3xl">
+    <div className="flex flex-col items-center justify-center h-fit gap-4 py-4 w-full max-w-3xl px-5">
       <label
         htmlFor="file"
         className="flex flex-col items-center justify-center w-full  border-red-700 h-16 border-2 border-dashed rounded-lg cursor-pointer bg-gray-100 hover:bg-gray-200"

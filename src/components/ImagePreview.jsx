@@ -3,8 +3,8 @@ import Loading from "./Loading";
 
 const ImagePreview = ({upload, loading, enhance}) => {
   return (
-    <div className="flex flex-col items-center justify-center h-fit gap-4 py-4 w-full max-w-3xl">
-      <div className="grid grid-cols-2 lg:grid-cols-2  gap-5 w-full h-fit max-w-3xl">
+    <div className=" flex items-center justify-center gap-4 py-4 w-full max-w-3xl">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8 h-fit w-full max-w-3xl px-5">
         {/* Original Image  */}
         <div className=" w-full shadow-sm  text-center h-80 rounded-2xl overflow-hidden relative">
           <p className="bg-red-600 text-white">Original Image</p>
