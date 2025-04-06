@@ -17,7 +17,7 @@ function App() {
       {/* Home */}
       <Home />
       <footer className="bg-red-600 text-center text-white py-3 text-sm font-bold shadow-md">
-        @hiarun01
+        by : @hiarun01
       </footer>
     </div>
   );
