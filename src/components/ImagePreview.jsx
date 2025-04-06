@@ -2,8 +2,10 @@ import React from "react";
 import Loading from "./Loading";
 
 const ImagePreview = ({upload, loading, enhance}) => {
+  console.log(enhance);
+
   return (
-    <div className=" flex items-center justify-center gap-4 py-4 w-full max-w-3xl">
+    <div className=" flex flex-col items-center justify-center gap-4 py-4 w-full max-w-3xl">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8 h-fit w-full max-w-3xl px-5">
         {/* Original Image  */}
         <div className=" w-full shadow-sm  text-center h-80 rounded-2xl overflow-hidden relative">
@@ -31,6 +33,17 @@ const ImagePreview = ({upload, loading, enhance}) => {
             </div>
           )}
         </div>
+      </div>
+      <div className="flex justify-center max-w-3xl mt-10">
+        {enhance ? (
+          <a
+            href={enhance}
+            download={enhance}
+            class="inline-block rounded-3xl border border-red-700 px-20 py-3 text-sm font-bold text-red-700 hover:bg-red-700 hover:text-white focus:ring-3 focus:outline-hidden"
+          >
+            Download
+          </a>
+        ) : null}
       </div>
     </div>
   );
