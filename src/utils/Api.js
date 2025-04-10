@@ -1,7 +1,5 @@
 import axios from "axios";
 
-// a8c078d1-0dd8-47c3-acd1-b214ffdf39ff
-
 export const getEnhanceImage = async (file) => {
   try {
     // upload image code
