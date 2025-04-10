@@ -65,7 +65,7 @@ const pollForEnchnaceImage = async (taskId, retrires = 0) => {
   if (result.state === 4) {
     console.log("Proccessing");
 
-    if (retrires >= 10) {
+    if (retrires >= 20) {
       console.log("Reached limit, Please try again later..");
     }
 
