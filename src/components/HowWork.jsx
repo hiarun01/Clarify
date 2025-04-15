@@ -27,7 +27,7 @@ const HowWork = () => {
       <div className="flex flex-col lg:flex-row gap-8 w-full max-w-6xl mx-auto p-6 border-red-600  border-t-2 rounded-2xl shadow-2xl mb-10">
         <div className="flex-1">
           <span className="text-lg border-b text-red-600">How it Work</span>
-          <h1 className="text-4xl font-bold mb-8  mt-10">Two Easy Steps</h1>
+          <h1 className="text-4xl font-bold mb-8  mt-10">Three Easy Steps</h1>
 
           <div className="space-y-8 mt-14 mb-8">
             {steps.map((step, index) => (
