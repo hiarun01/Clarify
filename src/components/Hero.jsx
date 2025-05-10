@@ -9,7 +9,7 @@ const Hero = () => {
           <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-sm whitespace-nowrap text-purple-700">
             Live
           </span>
-          <span className="text-sm font-medium">Features Comming Soon</span>
+          <span className="text-sm font-medium">AI Image Enhancer</span>
         </div>
       </div>
       {/* Main heading */}
