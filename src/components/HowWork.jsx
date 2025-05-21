@@ -3,13 +3,13 @@ import React from "react";
 const steps = [
   {
     number: 1,
-    title: "Upload Your Blurry Image",
+    title: "Upload Your Blurry Image.",
     description:
       "Upload any low-resolution or blurry image you want to enhance.",
   },
   {
     number: 2,
-    title: "Enhance with AI",
+    title: "Enhance with AI.",
     description: "Let our enhancement engine sharpen, upscale your image.",
   },
   {
