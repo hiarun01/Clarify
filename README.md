@@ -26,7 +26,7 @@
   </p>
 
   <p style="margin-top: 1rem;">
-    🔗 <a href="https://clarify.vercel.app/" target="_blank" style="color: #3b82f6; text-decoration: underline;">
+    🔗 <a href="https://hi-clarify.vercel.app/" target="_blank" style="color: #3b82f6; text-decoration: underline;">
       Live Demo
     </a>
   </p>
