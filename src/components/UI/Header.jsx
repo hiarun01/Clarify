@@ -8,7 +8,7 @@ const Header = () => {
       <NavLink to="/" className="flex gap-2">
         <Image />
         <div>
-          <span className="text-lg font-semibold">AI Image Enhancer</span>
+          <span className="text-lg font-semibold">Clarify</span>
         </div>
       </NavLink>
     </header>
