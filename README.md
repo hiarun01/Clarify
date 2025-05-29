@@ -1,5 +1,5 @@
 <section style="font-family: sans-serif; padding: 2rem; max-width: 800px; margin: auto;">
-  <h1 style="font-size: 2rem; margin-bottom: 1rem;">🌟 AI Image Enhancer</h1>
+  <h1 style="font-size: 2rem; margin-bottom: 1rem;">Clarify</h1>
   
   <p>
     <strong>Clarify</strong> is a Image Enhancer web application powered by AI (APi) that enhances and upscales your images with just one click.
