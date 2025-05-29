@@ -2,9 +2,7 @@
   <h1 style="font-size: 2rem; margin-bottom: 1rem;">🌟 AI Image Enhancer</h1>
   
   <p>
-    <strong>AI Image Enhancer</strong> is a powerful, AI-driven web application that enhances and upscales your images with just one click.
-    Whether you're a photographer, designer, or casual user, this tool uses state-of-the-art artificial intelligence to automatically
-    improve image quality—making them sharper, clearer, and more detailed.
+    <strong>Clarify</strong> is a Image Enhancer web application powered by AI (APi) that enhances and upscales your images with just one click.
   </p>
 
   <h2 style="margin-top: 2rem; font-size: 1.5rem;">🔧 Features:</h2>
@@ -28,7 +26,7 @@
   </p>
 
   <p style="margin-top: 1rem;">
-    🔗 <a href="https://hi-ai-image-enhancer.vercel.app/" target="_blank" style="color: #3b82f6; text-decoration: underline;">
+    🔗 <a href="https://clarify.vercel.app/" target="_blank" style="color: #3b82f6; text-decoration: underline;">
       Live Demo
     </a>
   </p>
