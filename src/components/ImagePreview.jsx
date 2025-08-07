@@ -1,8 +1,7 @@
 import Loading from "./Loading";
+import React from "react";
 
 const ImagePreview = ({upload, loading, enhance}) => {
-  console.log(enhance);
-
   return (
     <div className=" flex flex-col items-center justify-center gap-4 py-4 w-full max-w-3xl">
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8 h-fit w-full max-w-3xl px-5">
@@ -38,7 +37,7 @@ const ImagePreview = ({upload, loading, enhance}) => {
           <a
             href={enhance}
             download={enhance}
-            class="inline-block rounded-3xl border border-red-700 px-20 py-3 text-sm font-bold text-red-700 hover:bg-red-700 hover:text-white focus:ring-3 focus:outline-hidden"
+            className="inline-block rounded-3xl border border-red-700 px-20 py-3 text-sm font-bold text-red-700 hover:bg-red-700 hover:text-white focus:ring-3 focus:outline-hidden"
           >
             Download
           </a>

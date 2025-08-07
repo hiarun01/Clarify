@@ -4,15 +4,16 @@ export const getEnhanceImage = async (file) => {
   try {
     // upload image code
     const taskId = await uploadImage(file);
-    console.log("Task ID:", taskId);
+    // console.log("Task ID:", taskId);
 
     // fetch Enhance image from api
 
     const enhanceImage = pollForEnchnaceImage(taskId);
-    console.log("Enhance Image", enhanceImage);
+    // console.log("Enhance Image", enhanceImage);
     return enhanceImage;
   } catch (error) {
     console.error("Error fetching enhanced image:", error.message);
+    alert(`Error fetching enhanced image ${error.message}`);
   }
 };
 
@@ -50,7 +51,7 @@ export const fetchEnhanceImage = async (taskId) => {
   );
 
   if (data?.data) {
-    console.log("failed to fetch enhance image");
+    // console.log("failed to fetch enhance image");
   }
   return data.data;
 };
@@ -61,15 +62,15 @@ const pollForEnchnaceImage = async (taskId, retrires = 0) => {
   const result = await fetchEnhanceImage(taskId);
 
   if (result.state === 4) {
-    console.log("Proccessing");
+    // console.log("Proccessing");
 
     if (retrires >= 20) {
-      console.log("Reached limit, Please try again later..");
+      alert("Reached limit, Please try again later");
     }
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
     return pollForEnchnaceImage(taskId, retrires + 1);
   }
-  console.log("Enhance image URL :");
+  // console.log("Enhance image URL :");
   return result;
 };

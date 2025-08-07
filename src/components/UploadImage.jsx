@@ -1,3 +1,5 @@
+import React from "react";
+
 const UploadImage = ({uploadImageHandler}) => {
   const uploadImage = (e) => {
     const file = e.target.files[0];
